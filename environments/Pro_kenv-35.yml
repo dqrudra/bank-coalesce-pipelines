@@ -1,0 +1,11 @@
+fileVersion: 1
+id: "35"
+mappingDefinitions:
+  SRC:
+    database: BANK_DW
+    schema: RAW
+  TARGET:
+    database: BANK_DW
+    schema: STAGE
+name: Pro_k env
+type: Environment

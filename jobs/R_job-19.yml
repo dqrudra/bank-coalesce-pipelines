@@ -1,0 +1,6 @@
+excludeSelector: _PAYMENTS
+fileVersion: 1
+id: "19"
+includeSelector: "{ location: TARGET name: DIM_PRODUCTS } OR { location: TARGET name: STG_PRODUCTS } OR { location: TARGET name: FCT_PAYMENTS }"
+name: R_job
+type: Job

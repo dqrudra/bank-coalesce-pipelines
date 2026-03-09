@@ -1,0 +1,110 @@
+fileVersion: 1
+id: d1641347-bce1-42a5-a78c-161febf1930a
+name: STG_PAYMENTS
+operation:
+  config:
+    insertStrategy: INSERT
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: true
+    truncateBefore: true
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: TARGET
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7ae95ebe-da26-43d1-b7a0-e8f18485ac5c
+          stepCounter: d1641347-bce1-42a5-a78c-161febf1930a
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: PAYMENT_ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: a72cf2a2-2fd1-4c45-975e-ecee4b9ccfa7
+                stepCounter: 9d8424dc-45d9-41aa-be17-87cb3a7a6188
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6b613539-ee0b-4b50-8111-937d7934fe6a
+          stepCounter: d1641347-bce1-42a5-a78c-161febf1930a
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: ORDER_ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: df7e1322-3004-413d-8007-7e9550841918
+                stepCounter: 9d8424dc-45d9-41aa-be17-87cb3a7a6188
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6d217f34-df53-49c7-a501-231b8e0c90ff
+          stepCounter: d1641347-bce1-42a5-a78c-161febf1930a
+        config: {}
+        dataType: DATE
+        description: ""
+        name: PAYMENT_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 4f4d5ea4-23d4-4ab7-aa6a-bd0baf3ec8d3
+                stepCounter: 9d8424dc-45d9-41aa-be17-87cb3a7a6188
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 977cab65-63fa-4972-9161-4e4027d6aa42
+          stepCounter: d1641347-bce1-42a5-a78c-161febf1930a
+        config: {}
+        dataType: VARCHAR(50)
+        description: ""
+        name: PAYMENT_METHOD
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 39a95f60-4f77-44c5-9f67-87b6908a7151
+                stepCounter: 9d8424dc-45d9-41aa-be17-87cb3a7a6188
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 894b0006-8080-46c6-aa7c-6e2cb5ef3151
+          stepCounter: d1641347-bce1-42a5-a78c-161febf1930a
+        config: {}
+        dataType: VARCHAR(50)
+        description: ""
+        name: AMOUNT
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: cee30a18-c706-494f-8b71-34b45ddf41c1
+                stepCounter: 9d8424dc-45d9-41aa-be17-87cb3a7a6188
+            transform: ""
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          PAYMENTS: 9d8424dc-45d9-41aa-be17-87cb3a7a6188
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: SRC
+            nodeName: PAYMENTS
+        join:
+          joinCondition: FROM {{ ref('SRC', 'PAYMENTS') }} "PAYMENTS"
+        name: STG_PAYMENTS
+        noLinkRefs: []
+  name: STG_PAYMENTS
+  overrideSQL: false
+  schema: ""
+  sqlType: Stage
+  type: sql
+  version: 1
+type: Node

@@ -1,0 +1,142 @@
+fileVersion: 1
+id: cc06a83b-f28b-42a7-ac41-e8d887277123
+name: FCT_PAYMENTS
+operation:
+  config:
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: true
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: TARGET
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 1977b814-5c49-4744-a1f3-a1016e56c0ea
+          stepCounter: cc06a83b-f28b-42a7-ac41-e8d887277123
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: PAYMENT_ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 7ae95ebe-da26-43d1-b7a0-e8f18485ac5c
+                stepCounter: d1641347-bce1-42a5-a78c-161febf1930a
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 3240a111-b966-4eb3-8d36-c760c811f813
+          stepCounter: cc06a83b-f28b-42a7-ac41-e8d887277123
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: ORDER_ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6b613539-ee0b-4b50-8111-937d7934fe6a
+                stepCounter: d1641347-bce1-42a5-a78c-161febf1930a
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 899f3f56-5781-4421-93dd-efb99f286559
+          stepCounter: cc06a83b-f28b-42a7-ac41-e8d887277123
+        config: {}
+        dataType: DATE
+        description: ""
+        name: PAYMENT_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 6d217f34-df53-49c7-a501-231b8e0c90ff
+                stepCounter: d1641347-bce1-42a5-a78c-161febf1930a
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: d7469f87-31a7-4a35-9c77-57088774960e
+          stepCounter: cc06a83b-f28b-42a7-ac41-e8d887277123
+        config: {}
+        dataType: VARCHAR(50)
+        description: ""
+        name: PAYMENT_METHOD
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 977cab65-63fa-4972-9161-4e4027d6aa42
+                stepCounter: d1641347-bce1-42a5-a78c-161febf1930a
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 0b72ac15-a6ee-4344-979f-153b8dab1a36
+          stepCounter: cc06a83b-f28b-42a7-ac41-e8d887277123
+        config: {}
+        dataType: VARCHAR(50)
+        description: ""
+        name: AMOUNT
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 894b0006-8080-46c6-aa7c-6e2cb5ef3151
+                stepCounter: d1641347-bce1-42a5-a78c-161febf1930a
+            transform: ""
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 44b6964f-7c25-445f-a8ba-528ddaa452da
+          stepCounter: cc06a83b-f28b-42a7-ac41-e8d887277123
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: ""
+        isSystemCreateDate: true
+        name: SYSTEM_CREATE_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: CAST(CURRENT_TIMESTAMP AS TIMESTAMP)
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b5287809-0136-4177-ab2c-b69790188cfb
+          stepCounter: cc06a83b-f28b-42a7-ac41-e8d887277123
+        config: {}
+        dataType: TIMESTAMP
+        defaultValue: ""
+        description: ""
+        isSystemUpdateDate: true
+        name: SYSTEM_UPDATE_DATE
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: CAST(CURRENT_TIMESTAMP AS TIMESTAMP)
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          STG_PAYMENTS: d1641347-bce1-42a5-a78c-161febf1930a
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: TARGET
+            nodeName: STG_PAYMENTS
+        join:
+          joinCondition: FROM {{ ref('TARGET', 'STG_PAYMENTS') }} "STG_PAYMENTS"
+        name: FCT_PAYMENTS
+        noLinkRefs: []
+  name: FCT_PAYMENTS
+  overrideSQL: false
+  schema: ""
+  sqlType: Fact
+  type: sql
+  version: 1
+type: Node

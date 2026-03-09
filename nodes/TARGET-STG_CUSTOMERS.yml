@@ -1,0 +1,105 @@
+fileVersion: 1
+id: 4e597eb9-394b-46a9-8977-48697aa2defc
+name: STG_CUSTOMERS
+operation:
+  config:
+    insertStrategy: INSERT
+    postSQL: ""
+    preSQL: ""
+    testsEnabled: true
+    truncateBefore: true
+  database: ""
+  deployEnabled: true
+  description: ""
+  isMultisource: false
+  locationName: TARGET
+  materializationType: table
+  metadata:
+    appliedNodeTests: []
+    columns:
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: c3a8e1df-0255-48ae-b704-cd823e5eb3a9
+          stepCounter: 4e597eb9-394b-46a9-8977-48697aa2defc
+        config: {}
+        dataType: NUMBER(38,0)
+        description: ""
+        name: CUSTOMER_ID
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: bb7f319f-825d-41f7-80f2-68ae6a703ccd
+                stepCounter: d937decf-dc94-4833-852d-62f46d143296
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 8d0d0606-a6f6-40df-b4bb-0775f64b8cd7
+          stepCounter: 4e597eb9-394b-46a9-8977-48697aa2defc
+        config: {}
+        dataType: VARCHAR(50)
+        description: ""
+        name: NAME
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: 73b986ae-ae8e-479b-9aec-d530203e9de7
+                stepCounter: d937decf-dc94-4833-852d-62f46d143296
+            transform: ""
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 2759ebe8-d52e-40f0-b78d-8f0ee83f0907
+          stepCounter: 4e597eb9-394b-46a9-8977-48697aa2defc
+        config: {}
+        dataType: VARCHAR(50)
+        description: ""
+        name: EMAIL
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: be245ce1-3b78-4347-aded-52b6324e6132
+                stepCounter: d937decf-dc94-4833-852d-62f46d143296
+            transform: |-
+              CASE 
+              WHEN REGEXP_LIKE(EMAIL,'^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$')
+              THEN EMAIL
+              ELSE NULL
+              END
+      - appliedColumnTests: {}
+        columnReference:
+          columnCounter: 31cfd789-8478-4e15-abc3-202fd4740a9b
+          stepCounter: 4e597eb9-394b-46a9-8977-48697aa2defc
+        config: {}
+        dataType: VARCHAR(50)
+        description: ""
+        name: COUNTRY
+        nullable: true
+        sourceColumnReferences:
+          - columnReferences:
+              - columnCounter: f33063d3-71d4-406a-99e2-7cd5543978b1
+                stepCounter: d937decf-dc94-4833-852d-62f46d143296
+            transform: |-
+              CASE 
+                  WHEN COUNTRY = 'US' THEN 'USA'
+                  ELSE COUNTRY
+              END
+    cteString: ""
+    enabledColumnTestIDs: []
+    sourceMapping:
+      - aliases:
+          CUSTOMERS: d937decf-dc94-4833-852d-62f46d143296
+        customSQL:
+          customSQL: ""
+        dependencies:
+          - locationName: SRC
+            nodeName: CUSTOMERS
+        join:
+          joinCondition: FROM {{ ref('SRC', 'CUSTOMERS') }} "CUSTOMERS"
+        name: STG_CUSTOMERS
+        noLinkRefs: []
+  name: STG_CUSTOMERS
+  overrideSQL: false
+  schema: ""
+  sqlType: Stage
+  type: sql
+  version: 1
+type: Node

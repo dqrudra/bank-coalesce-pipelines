@@ -1,0 +1,92 @@
+fileVersion: 1
+id: e3b0fa0b-041d-4ed2-a102-bce785097273
+name: PRODUCTS
+operation:
+  database: ""
+  deployEnabled: true
+  description: ""
+  locationName: SRC
+  metadata:
+    columns:
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 7bd90a0d-75ac-43e3-bc12-926ec6eebb6b
+          stepCounter: e3b0fa0b-041d-4ed2-a102-bce785097273
+        config: {}
+        dataType: NUMBER(38,0)
+        defaultValue: ""
+        description: ""
+        name: PRODUCT_ID
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: beb7764e-0d93-44cc-a7ee-6445ea4efa7b
+          stepCounter: e3b0fa0b-041d-4ed2-a102-bce785097273
+        config: {}
+        dataType: VARCHAR(50)
+        defaultValue: ""
+        description: ""
+        name: PRODUCT_NAME
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 069ec2dd-a67d-4360-8180-6bfabf0d186e
+          stepCounter: e3b0fa0b-041d-4ed2-a102-bce785097273
+        config: {}
+        dataType: VARCHAR(50)
+        defaultValue: ""
+        description: ""
+        name: CATEGORY
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 5e97fdb8-000e-40c3-bacb-368a2d5c66b6
+          stepCounter: e3b0fa0b-041d-4ed2-a102-bce785097273
+        config: {}
+        dataType: NUMBER(38,0)
+        defaultValue: ""
+        description: ""
+        name: PRICE
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+  name: PRODUCTS
+  schema: ""
+  sqlType: Source
+  type: sourceInput
+  version: 1
+type: Node
